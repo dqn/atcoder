@@ -1,0 +1,11 @@
+ABA
+
+Yes
+---
+BBA
+
+Yes
+---
+BBB
+
+No
