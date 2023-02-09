@@ -2,7 +2,7 @@
   "name": "atcoder",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf ./dist && tsc --build ./tsconfig.prod.json",
     "i": "ts-node --transpile-only ./scripts/init.ts",
     "submit": "yarn build && ts-node --transpile-only ./scripts/submit.ts"
   },
