@@ -1,8 +1,8 @@
 import nodeFetch from "node-fetch";
 import fetchCookie from "fetch-cookie";
 import { readFile } from "fs/promises";
-import config from "../config.json";
 import { exec } from "child_process";
+import config from "../config.json";
 
 const baseUrl = "https://atcoder.jp";
 
@@ -36,7 +36,7 @@ async function test(contest: string, task: string): Promise<boolean> {
     return { input, output };
   });
 
-  const command = `node ./dist/src/${contest}/${task}.js`;
+  const command = `node ./dist/${contest}/${task}.js`;
 
   const results = await Promise.all(
     tests.map(async (x) => {
@@ -138,7 +138,7 @@ async function main(): Promise<void> {
 
   const csrfToken = await getCsrfToken();
   await login(csrfToken, config.username, config.password);
-  const src = await readFile(`./dist/src/${contest}/${task}.js`, "utf-8");
+  const src = await readFile(`./dist/${contest}/${task}.js`, "utf-8");
   await submit(csrfToken, contest, task, src);
 }
 
