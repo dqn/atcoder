@@ -1,0 +1,19 @@
+{
+  "name": "atcoder",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "submit": "yarn build && ts-node --transpile-only ./scripts/submit.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "@types/node-fetch": "^2",
+    "prettier": "^2.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "fetch-cookie": "^2.1.0",
+    "node-fetch": "^2"
+  }
+}
