@@ -15,8 +15,8 @@ async function fetchTests(contest: string, task: string): Promise<Test[]> {
 
   const tests: Test[] = [];
 
-  const matches1 = [...text.matchAll(/Sample Input.+?<pre>(.+?)<\/pre>/gs)];
-  const matches2 = [...text.matchAll(/Sample Output.+?<pre>(.+?)<\/pre>/gs)];
+  const matches1 = [...text.matchAll(/Sample Input \d.+?<pre>(.+?)<\/pre>/gs)];
+  const matches2 = [...text.matchAll(/Sample Output \d.+?<pre>(.+?)<\/pre>/gs)];
 
   for (let i = 0; i < matches1.length; ++i) {
     tests.push({
