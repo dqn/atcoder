@@ -2,6 +2,20 @@ import { readFileSync } from "fs";
 
 function main() {
   const input = inputs();
+
+  const x = input[1].map(Number);
+  const l = Math.min(...x);
+  const r = Math.max(...x);
+
+  let ans = Number.POSITIVE_INFINITY;
+  rep(l, r + 1, (i) => {
+    let h = 0;
+    x.forEach((xi) => {
+      h += Math.pow(xi - i, 2);
+    });
+    ans = Math.min(ans, h);
+  });
+  println(ans);
 }
 
 function inputs(): string[][] {

@@ -2,6 +2,16 @@ import { readFileSync } from "fs";
 
 function main() {
   const input = inputs();
+  let n = BigInt(input[0][0]);
+  const k = BigInt(input[0][1]);
+
+  let ans = 1;
+  while (n >= k) {
+    n /= k;
+    ans++;
+  }
+
+  println(ans);
 }
 
 function inputs(): string[][] {

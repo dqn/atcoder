@@ -2,6 +2,9 @@ import { readFileSync } from "fs";
 
 function main() {
   const input = inputs();
+  const n = BigInt(input[0][0]);
+  const r = BigInt(input[0][1]);
+  println(n < 10 ? 100n * (10n - n) + r : r);
 }
 
 function inputs(): string[][] {
@@ -14,16 +17,6 @@ function inputs(): string[][] {
 
 function println(val: Object): void {
   console.log(val.toString());
-}
-
-function rep(
-  begin: number,
-  until: number,
-  callback: (i: number) => void,
-): void {
-  for (let i = begin; i < until; ++i) {
-    callback(i);
-  }
 }
 
 function makeArray<T>(value: T, len: number): T[] {
